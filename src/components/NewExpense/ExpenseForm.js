@@ -5,7 +5,7 @@ import "./ExpenseForm.css";
 const ExpenseForm = (props) => {
   const [userInput, setUserInput] = useState({
     title: "",
-    amount: "",
+    amount: 0,
     date: "",
   });
 
@@ -17,7 +17,7 @@ const ExpenseForm = (props) => {
 
   const amountChangeHandler = (event) => {
     setUserInput((prevState) => {
-      return { ...prevState, amount: event.target.value };
+      return { ...prevState, amount: +event.target.value };
     });
   };
 
